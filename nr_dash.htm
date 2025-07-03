@@ -1,3 +1,2134 @@
-<html>
+<!-- Developed and design by Chris Jones -  BA93W - Beetle MIII - Monitor-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-<\html>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-win8.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="nr-dash.css">
+<style>
+.MoveButtonUp{
+            position: relative;
+            top: -65px;
+            left: 5px;
+            background-color: #fff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+.MoveStuffUp{
+            position: relative;
+            top: -65px;
+            left: 5px;
+
+            border: none;
+            cursor: pointer;
+        }
+.hidden-textarea{
+         opacity: 0;
+  position: absolute;
+  z-index: -9999;
+  pointer-events: none;
+    }
+</style>
+<link rel="icon" type="image/x-icon" href="/mario.ico"/>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<meta name="viewport" content="width=device-width, initial-scale=0.6">
+<title>NR-Dash</title>
+</head>
+<body>
+<a id="Page_Top"></a>
+<div class="w3-container">
+<div class="w3-row-padding w3-row" style="margin:0 2%">
+<div class="w3-container w3-teal">
+<h1>Network Rail Dashboard
+	<span style="font-size:12pt;">org: IT Service Operations - ITHD1: 01270 721 600 - 2LS: 01270 721 745</span>  
+	<span style="font-size:8pt">(1.0-iVersion) @networkrail.co.uk</span>
+</h1>
+<!-- #######################  Top green Section  ############## -->
+
+<p style="font-size:10pt"><a href="https://networkrail.sharepoint.com/sites/nrmyconnect" target="_blank">Home</a> 
+
+<a href="https://networkrail.sharepoint.com/sites/nrmyconnect" target="_blank">https://networkrail.sharepoint.com/sites/nrmyconnect</a> - 
+<a href="https://outlook.office.com/mail/ITHelpdesk@networkrail.co.uk/" target="_new"> ITHDMailbox</a>
+
+<br>Asset: 4L040954 <br>ZScaler: <a href="http://ip.zscaler.com" target="_blank">http://ip.zscaler.com</a>
+ - <span style="color:yellow"><a href="https://aka.ms/mfasetup">https://aka.ms/mfasetup</a></span>
+
+<br><a href="#" title="AddPwd"">WINVV #signon: #QASL062</a> opt 4
+</br>G:\Servicedesk\Roster\2024\Helpdesk Roster 2024.xlsx
+</br>AD: UKRDC3SDC43015.corp.UKrail.net 
+
+<br />Approvals: approvals@networkrail.co.uk<br />
+
+Apple MSAuth app: https://apps.apple.com/us/app/microsoft-authenticator/id983156458 <br />
+Android MSAuth app: https://play.google.com/store/apps/details?id=com.azure.authenticator&pcampaignid=web_share 
+
+<br />Installing 4cs software
+
+<br />SIMS: <a href="mailto:Servicecentreincidentmangement@networkrail.co.uk">Servicecentreincidentmangement@networkrail.co.uk</a>
+ - <a href="mailto:ITHDSIM@networkrail.co.uk">ITHDSIM@networkrail.co.uk</a>
+
+<br><a href="mailto:ITHDSIM@networkrail.co.uk"> ITHDSIM@networkrail.co.uk</a>
+
+<br>\\Msqv01fc01\groups\IT HELPDESK\SIM Team\Page One
+</p>
+
+<!-- #######################  VPN End ############### -->
+</div>
+<!-- #######################  Menu Items ############### -->
+<div class="w3-bar w3-yellow  w3-tiny">
+  <button class="w3-bar-item w3-red w3-animate-right w3-button" onclick="openCity('close')">&times;</button>
+  <div class="w3-dropdown-hover">
+     <button class="w3-button w3-indigo">Pwd Reset</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+<!--      <a href="#" class="w3-bar-item w3-red w3-button" target="_blank onclick="openCity('StdPwd')">Standard</a> -->
+
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('StdSSPR')">Standard</a>
+
+      <a href="https://nwrprod.service-now.com/sp?id=esc_sc_category&sys_id=1625e51b1b3d38106d8ceb92b24bcb54&catalog_id=-1&spa=1" target="_new" class="w3-bar-item w3-red w3-button" onclick="openCity('Old_Version')">Old Vers</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('AD_AdminPwd')">Admin</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('AD_ExtAcc')">External Accounts (Secure Gateway)</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('AD_GenAcc')">Generic Account</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('SSOWPs')">SSOWPS</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('FDM')">Field Data Manager</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('FDMMW')">My Work App</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('WINVV')">#Signon</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('Templ8s')">Templates</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('AD_MFA')">MFA</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('Bitlocker')">Bitlocker</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('New_Link')">New Link</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('AD_WorkExp')">WorkExp</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('Bios_Fail')">BIOS Update failed</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('AD_Disable')">Disable</a>
+    </div>
+  </div>
+  <div class="w3-dropdown-hover">
+    <button class="w3-button w3-blue">Azure</button>
+   <div class="w3-dropdown-content w3-bar-block w3-card-4">
+     <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('Azure_Act')">Activate</a>
+
+   </div>
+ </div>
+  <div class="w3-dropdown-hover">
+     <button class="w3-button w3-light-blue">ZScaler</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('Sec_Appr_0525')">Sec_App_0525</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('ZSFWAV')">FW/AV error</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('ZSCredGrd')">Credentials Guard</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('ZSWeBlck')">ZScaler Web Restriction</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('ZSAuth')">ZScaler Authenticator</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('ZSAuthAndr')">ZScAuth - Android</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('ADPolicies')">AD Policies</a>
+    </div>
+  </div>
+  <div class="w3-dropdown-hover">
+     <button class="w3-button w3-gray">Hardware</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('HW_Printers')">Printers</a>
+      <a href="https://nwrprod.service-now.com/sp?id=search&spa=1&q=headset&disableAllSuggestions=false&disableSpellCheck=false&searchFilters=aed3c51253671010069addeeff7b121b" target="_new" class="w3-bar-item w3-red w3-button" onclick="openCity('HW_desktopapp')">Headset</a>
+      <a href="https://nwrprod.service-now.com/sp?id=sc_cat_item&table=sc_cat_item&sys_id=a5721e521b32b514b470dc62b24bcbb8" target="_new" class="w3-bar-item w3-red w3-button" onclick="openCity('HW_storefront')">Lptp HP ProBk</a>
+      <a href="https://nwrprod.service-now.com/sp?id=search&spa=1&q=lenovo&disableAllSuggestions=false&searchFilters=aed3c51253671010069addeeff7b121b&disableSpellCheck=false&paginationToken=b2Zmc2V0OjA." target="_new" class="w3-bar-item w3-red w3-button" onclick="openCity('HW_blackscreen')">Lptp Lenovo</a>
+      <a href="https://nwrprod.service-now.com/sp?id=sc_cat_item&table=sc_cat_item&sys_id=b50d85d71bf2b5106d8ceb92b24bcbac target="_new"" class="w3-bar-item w3-red w3-button" onclick="openCity('HW_printers')">iPad Gen 9 10.2"</a>
+      <a href="https://nwrprod.service-now.com/sp?id=sc_cat_item&table=sc_cat_item&sys_id=bc5cfc1b1bfe75106d8ceb92b24bcb76" target="_new" class="w3-bar-item w3-red w3-button" onclick="openCity('HW_iPad')">iPad Mini</a>
+      <a href="https://nwrprod.service-now.com/sp?id=search&spa=1&q=iphone&disableAllSuggestions=false&disableSpellCheck=false&searchFilters=aed3c51253671010069addeeff7b121b" target="_new" class="w3-bar-item w3-red w3-button" onclick="openCity('HW_iPhone')">iPhone SE Gen 3</a>
+      <a href="https://www.o2-microsites.co.uk/network-rail/products" target="_new" class="w3-bar-item w3-red w3-button" onclick="openCity('HW_iPhone')">iAccessories</a>
+      <a href="https://www.o2-microsites.co.uk/network-rail/product-details?product-id=bnk1NUNvZ20wbDlvOU02Sk05WXZuUT09" target="_new" class="w3-bar-item w3-red w3-button" onclick="openCity('HW_iPhone')">SIM</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('HW_LocAd')">Local Adm</a>    
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('PUK_Codes')">PUK Codes</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('HW_Proc')">Procurement</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('HW_HybUSBCDk')">Hybrid USB-C Dock</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('iPhoneOneDrive')">iPhone>OneDrive</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('Cntcts-iPh>And')">Cntcts iPh>And</a>
+
+
+    </div>
+  </div>
+  <div class="w3-dropdown-hover">
+     <button class="w3-button w3-blue">Exchange</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('Exc_Add')">Add</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('Exc_Access')">Access A/o Mailbox</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('Exc_Rem')">Remove</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('Exc_OnPrem')">OnPrem</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('Exc_OOO')">OOO</a>
+      <a href="https://nwrprod.service-now.com/sp?id=kb_article&table=kb_knowledge&sysparm_article=NRKB0012559&searchTerm=email%20delegate" target="_new" class="w3-bar-item w3-red w3-button" onclick="openCity('OtLk_Deleg')">Delegate</a>
+      <a href="https://nwrprod.service-now.com/sp?id=kb_article&table=kb_knowledge&sysparm_article=NRKB0013922&searchTerm=access%20another%20persons%20email" target="_new" class="w3-bar-item w3-red w3-button" onclick="openCity('OtLk_AcsOP')">Access OP Mailbox</a>
+       <a href="https://nwrprod.service-now.com/sp?id=kb_category&kb_id=dfc19531bf2021003f07e2c1ac0739ab&kb_category=6a7bd0ba1b1af45099e16283b24bcb25" target="_new" class="w3-bar-item w3-red w3-button" onclick="openCity('OtLk_Iss')">Outlook Issues</a>
+    </div>
+  </div>
+ <div class="w3-dropdown-hover">
+     <button class="w3-button w3-purple">S-Now</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <a href="https://networkrail-my.sharepoint.com/:x:/r/personal/kglover1_networkrail_co_uk/_layouts/15/Doc.aspx?sourcedoc=%7B178B8B79-8202-4213-A9B7-60C97A474598%7D&file=Software%20Rationalisation%20with%20usernames.xlsx&action=default&mobileredirect=true"  target="_new" class="w3-bar-item w3-red w3-button" onclick="openCity('#')">Software Re-Harvesting</a>
+
+<a href="https://networkrail-my.sharepoint.com/:x:/r/personal/jkhan14_networkrail_co_uk/_layouts/15/doc2.aspx?sourcedoc=%7B7353546E-E677-40D7-BF4F-0A5974B056B5%7D&file=Escalation%20Tracker.xlsx&action=default&mobileredirect=true&wdLOR=cF8AE9687-3ED0-4EEB-A909-16F0E7043BC7"  target="_new" class="w3-bar-item w3-red w3-button" onclick="openCity('#')">Escalations</a>
+
+<a href="https://networkrail-my.sharepoint.com/:x:/r/personal/kharris8_networkrail_co_uk/_layouts/15/Doc.aspx?sourcedoc=%7BD1C0591A-2A11-4484-8160-54F62EC13705%7D&file=Escalation%20Tracker.xlsx&wdLOR=c6CFCFCDB-84AE-4E47-B831-ACB59604C7D7&fromShare=true&action=default&mobileredirect=true"  target="_new" class="w3-bar-item w3-red w3-button" onclick="openCity('#')">Escalations 2.0</a>
+
+       <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('eL_Reset')">eLearning Reset</a>
+       <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('S_Now-Tag')">Adding 'Tags' to tickets</a>
+       <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('Strm-Trans')">Live Transfer</a>
+       <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('EscScript')">Esc Script</a>
+       <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('AmedAppr')">Amend Approver</a>
+    </div>
+  </div>
+
+  <div class="w3-dropdown-hover">
+     <button class="w3-button w3-yellow">WINVV</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('WINVVPol')">AD Policy</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('T24_R15')">R15</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('T24_pwd_rst')">Pwd Rst</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('T24_New_acc')">New Acc</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('T24_Rev_Acc')">Rev Acc</a>
+    </div>
+  </div>
+
+
+  <div class="w3-dropdown-hover">
+
+     <button class="w3-button w3-orange">Ext Contact</button>
+
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('EXT_List')">Contact list</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('EXT_NESA')">NESA</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('EXT_Stnd')">Standards</a> 
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('EXT_NoSpon')">No Sponsor</a> 
+      <a href="https://www.networkrail.co.uk/careers/careers-search/" target="_new" class="w3-bar-item w3-red w3-button" onclick="openCity('#')">Careers Hub</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('EXT_PPS')">PPS</a>
+      <a href="https://forms.office.com/pages/responsepage.aspx?id=4cMswn9dTU--A9WhWMyUCftiC38H_oNJpIUAfGw2W_dUMFVPNEo5OURKOTJLNVBXWDdJR1BaTUUxMyQlQCN0PWcu" target="_NEW" class="w3-bar-item w3-red w3-button" onclick="openCity('ExtMFA')">MFA with no NR Device</a>
+    
+</div>
+  </div>
+
+  <div class="w3-dropdown-hover">
+     <button class="w3-button w3-black">AD</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('AD_Azure')">Azure</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('AD_Disable')">Disable</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('AD_DisChk')">Disable Chk</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('AD_Grvyrd')">Graveyarding</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('AD_ExtMatLv')">Extend/Mat Leave</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('AD_AddGP')">Add GP</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('HD_Map')">ITHD1 Mapping</a>
+      <a href="https://networkrail-my.sharepoint.com/:x:/r/personal/kglover1_networkrail_co_uk/Documents/SAM/Re-Harvesting/Software Rationalisation with usernames.xlsx?d=w178b8b7982024213a9b760c97a474598&csf=1&web=1&e=mXK8V1" target="_new" class="w3-bar-item w3-red w3-button" onclick="openCity('AD-ReHav')">Re-Harvesting</a>
+      <a href="https://nwrprod.service-now.com/sp?id=sc_cat_item&table=sc_cat_item&sys_id=7a386a50dbdd6c10a6247a76f39619b4" target="_new" class="w3-bar-item w3-red w3-button" onclick="openCity('AD_New')">New Acc Req</a>
+      <a href="http://nc2v92ie01.corp.ukrail.net/helpdesk/" target="_new" class="w3-bar-item w3-red w3-button" onclick="openCity('AD_New')">Bitlocker (Use InPrivate)</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('AD_Txt')">Text to User</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('LoginFormat')">Login Format</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('eLearning_Help')">eLearning Help</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('AD_Outl-loop')">Outlook ...One Moment loop</a>
+    </div>
+  </div>
+
+<a class="example-image-link" href="Food Store Images/Foodlinks/BU.png" data-lightbox="example-set" data-title="Or press the right arrow on your keyboard."></a>
+<a class="example-image-link" href="Food Store Images/Foodlinks/Screens.png" data-lightbox="example-set" data-title="Or press the right arrow on your keyboard."></a>
+<a class="example-image-link" href="Food Store Images/Foodlinks/LSJun.png" data-lightbox="example-set" data-title="Or press the right arrow on your keyboard."></a>
+<a class="example-image-link" href="Food Store Images/Foodlinks/SCOJun.png" data-lightbox="example-set" data-title="Or press the right arrow on your keyboard."></a>
+<a class="example-image-link" href="Food Store Images/Foodlinks/SSJun.png" data-lightbox="example-set" data-title="Or press the right arrow on your keyboard."></a>
+
+  <div class="w3-dropdown-hover">
+     <button class="w3-button w3-blue">Wifi</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('Wifi-CMD')">Wifi CMD</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('Wifi-101')">Wifi 101</a>
+    </div>
+  </div>
+  <button class="w3-bar-item w3-dark-gray w3-animate-right w3-button" onclick="openCity('Emailadds')">Email address'</button>
+  <button class="w3-bar-item w3-blue w3-animate-right w3-button" onclick="openCity('Mbox')">Mailbox</button>
+  <!-- ### <button onclick="document.getElementById('amazon').style.display='block'" class="w3-button w3-grey w3-right">Amz</button>
+  <button onclick="document.getElementById('id0').style.display='block'" class="w3-button w3-grey w3-right">IT Stuff</button>
+  <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-grey w3-right">IP's</button>
+  <button onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-grey w3-right">Tele</button> ### -->
+  
+
+<div class="w3-dropdown-hover">
+     <button class="w3-button w3-indigo">Station</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('InfoScreen')">Info Screen</a>
+
+    </div>
+
+  </div>
+<div class="w3-dropdown-hover">
+
+     <button class="w3-button w3-purple">SharePoint</button>
+
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('SPExcel')">Spreadsheet</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('SPStndrds')">Standards</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('ToolKit')">ToolKit</a>
+      <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('PwrBIProbs')">PwrBI Problems</a>
+
+    </div>
+
+  </div>
+<div class="w3-dropdown-hover">
+     <button class="w3-button w3-pink">Software</button>
+     <div class="w3-dropdown-content w3-bar-block w3-card-4">
+     <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=4cMswn9dTU--A9WhWMyUCaWag6loN2dFl1ArVRCQaHVUQ01FRU1UQkRJTk9WWkRXVkxVOVY1NUNINi4u" target="_new" class="w3-bar-item w3-red w3-button" onclick="openCity('#')">Non-Stnd</a> 
+     <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('NSCAR')">Non-stnd Catch All Req </a>
+     <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('TeamsMSI')">Teams dwnld</a>
+     <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('SoftReHav')">ReHarvesting</a>     
+     <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('SoftBA')">Business Analytics</a>     
+     <a href="#" class="w3-bar-item w3-red w3-button" onclick="openCity('SafeComFix')">Fix SafeCom</a> 
+
+</div>
+</div>
+</div>
+<!-- #######################  Menu Items End ############### -->
+<!-- #######################  Content  ############### -->
+<div id="close" class="city" style="display:none">
+</div>
+<!-- ####################### AD policies  ############### -->
+
+<div id="ADPolicies" class="city" style="display:none">
+
+  <div style="margin: 0 11%;">
+  <h2>AD Policies</H2>
+  
+  <p><strong>User Policy</strong></p>
+  <p>A-AffinityFieldre571;D-RSNWMRHF02-C-NW05GROUPS-SERVDESK;A-Mob-CorpUsers-NoAS;A-WinVVTN3316;A-WinVVTN34002;D-RSNWMRHF02-C-NW05GROUPS-SERVDESK;DL-ServerUsers-RSNW-MRH-H01;ER-VPN-NetworkAccess;M-G-RSNWMRHF02-NW05GROUPS;M-M-RSNWMRHH01-Appsserver</p>
+
+    <p><strong>Device Policy</strong></p>
+    <p>A#-7-Zip24.09.00.0;A#-AdobeWin7and10AdobeFlashFix;A#-AffinityFieldreachFDM&Script-Builder5.10.3_v3;A#-CiscoWebExMeetingsforInternetExplorer29.7.2.4;A#-GoogleChromeBrowser;A#-HPUniversalPrintDriver64-bit6.9.0.24630;A#-Lenovo_ThinkPad_Hybrid_USB-C_USB-A_Dock;A#-MiCCEnterprise9.4-Agent-ITHD;A#-MicrosoftPowerBIDesktopStore;A#-NetworkRailDJVU6.0.1;A#-NetworkRailWebExProductivityTools2.1.1115;A#-NetworkRailWinVVTN3.4;A#-NetworkRailWinZip12.1;A#-NotePadPlusPlus8.7.5;ER-Enable-ASR-BlockExeFiles;HCL_Win11v23h2_OS_Lock_GPO;RG-Windows-Hello-For-Business-Computers</p>
+
+  </div><hr></div>
+  
+  <!-- ####################### ADPolicies END ############### -->
+<!-- ####################### Password Reset Standard  ############### -->
+
+<div id="StdSSPR" class="city" style="display:none">
+
+  <div style="margin: 0 11%;">
+  <h2>Standard Pwd Reset</H2>
+  
+  <p>Self Service Password Reset (SSPR)</p>
+  <p> <a href="https://passwordreset.microsoftonline.com" target="_new">Get back into your account</a></p>
+
+  
+  </div><hr></div>
+  
+  <!-- ####################### Password Reset Standard END ############### -->
+<!-- ####################### Azure Activate  ############### -->
+
+<div id="Azure_Act" class="city" style="display:none">
+
+  <div style="margin: 0 11%;">
+  <h2>Activate Azure</H2>
+  
+  <p>Activeate Azure to access Azure and Intune web applications</p>
+  <p> <a href="https://portal.azure.com/?configHash=VL2ND5u_pCBk&iepolyfills=true&l=en.en-us&appPageVersion=5.0.303.11195290572.191119-0103#view/Microsoft_Azure_PIMCommon/ActivationMenuBlade/~/aadmigratedroles"  target="_new">Azure Activation Page</a></p>
+
+  
+  </div><hr></div>
+  
+  <!-- ####################### Azure Activate END ############### -->
+<!-- ####################### Approval Process 05/25  ############### -->
+
+<div id="Sec_Appr_0525" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>Approvals Process 05/25</H2>
+
+<p>This document explains the process for getting approval for setting MFA to be re-registered by the user or password resets through the IT helpdesk. The aim is to ensure all resets are properly authorised to maintain security.</p>
+
+<p><strong>Scope</strong></p>
+
+<p>This process applies to all requests for password and for setting MFA to be re-registered by the user for both individual and generic accounts within the organisation.</p>
+
+<p><strong>Approval Requirements</strong></p>
+
+<p><strong>Individual Accounts</strong></p>
+
+<ul>
+<li>Manager Approval: Password and setting MFA to be re-registered by the user cannot be done without an email from the user's manager, sent to the approvals mailbox.
+</li>
+<li>
+
+Alternate Approval: If the user's manager is unavailable, an email from an adjacent manager or a higher-level manager in the management chain is acceptable. i.e their managers manager, or another band 4 or above or manager adjacent to their direct manager. Use the org charts to check this.</li>
+</ul>
+
+<p><strong>Generic Accounts</strong></p>
+
+<ul>
+<li>Account Owner Approval: For generic accounts, the reset request must come from the account owner.
+</li>
+<li>
+Route control Manager Approval: If the account owner is unavailable or it is during the night shift, the Route control manager, local operations manager, or mobile operations manager on shift can authorise the reset.
+</li>
+</ul>
+<p><strong>Process Flow</strong></p>
+
+<p><strong>Request Submission</strong></p>
+<ol>
+
+<li>User Request: The user contacts the IT helpdesk requesting a password or setting MFA to be re-registered.
+</li>
+<li>
+Ticket Creation: The IT helpdesk analyst creates a ticket in the system and provides the user with a reference number.
+</li>
+</ol>
+<p><strong>Approval Verification</strong></p>
+
+<ol>
+
+<li>Manager Email: The user's manager (or alternate as specified) sends an email to the approvals mailbox authorising the reset.
+</li>
+<li>
+Generic Account Email: For generic accounts, the account owner (or alternate as specified) sends the authorisation email.
+</li>
+</ol>
+<p><strong>Reset Execution</strong></p>
+
+<ol>
+<li>Approval Confirmation: The IT helpdesk analyst verifies the approval email.
+
+</li>
+<li> Reset Action: Upon confirmation, the analyst proceeds with the password or sets MFA to be re-registered.
+
+</li>
+<li> Notification: The user is notified of the reset completion and provided with any necessary instructions.
+</li>
+</ol>
+<p><strong>Special Considerations</strong></p>
+<ul>
+
+<li>Out-of-Hours Requests: For out-of-hours requests, the same approval process applies. If the manager or account owner is not available, the request will be processed during the next business hours.</li>
+<li>
+Security Compliance: All resets must comply with the organisation's security policies and procedures.
+</li>
+</ul>
+</p>
+<p><strong>Author:</strong> Oliver Hattersley - Date: 09/05/2025</p>
+
+</div><hr></div>
+
+<!-- ####################### Approval Process 05/25 END ############### -->
+
+<!-- ####################### Hybrid USB-C Docking station Link  ############### -->
+
+<div id="HW_HybUSBCDk" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>Hybrid USB-C Docking station Link</H2>
+
+<p>Hybrid USB-C Docking station Link Link</p>
+
+<a href="https://nwrprod.service-now.com/sp?id=sc_cat_item&sys_id=0213266f1bba39106d8ceb92b24bcb66" target="_new">Hybrid USB-C Docking station Link</a>
+
+<p>new Link</p>
+
+</div><hr></div>
+
+<!-- ####################### Hybrid USB-C Docking station Link END ############### -->
+<!-- ####################### Contacts iPhone Android ############### -->
+
+<div id="Cntcts-iPh>And" class="city" style="display:none">
+
+ <div style="margin: 0 11%;">
+   <h2>Contacts iPhone to Android</H2>
+   <p><a href="##">Contacts iPhone to Android</a></p>
+   <p>Learn more</br>
+   Yes, you can transfer contacts from an iPhone to an Android phone. The easiest method is by syncing your iPhone contacts to Google Contacts and then accessing them on your Android device. You can also export your iPhone contacts as a vCard file and import it to your Android. </br>
+   Here's how to transfer contacts from iPhone to Android using Google Contacts: </p>
+   <ol>
+     <li>On your iPhone:</li>
+     <ul>
+     <li>Open Settings and go to "Contacts".</li>
+     <li>Tap "Accounts".</li>
+     <li>Tap your existing Google account (or add a new one if you don't have one).</li>
+     <li>Toggle the "Contacts" switch to the "On" position.</li>
+     <li>This will start syncing your iPhone contacts with Google Contacts.</li>
+     </ul>
+     <li>On your Android phone:</li>
+     <ul>
+     <li>Open the Contacts app.</li>
+     </ul>
+   </ol>
+  
+   Make sure you're signed in with the same Google account you used on your iPhone.</br>
+   Your iPhone contacts should now appear in your Android Contacts app. </br>
+   Alternatively, you can transfer contacts using a vCard file:</br>
+   <ol>
+     <li>On your iPhone:</li>
+     <ul>
+       <li>Go to iCloud.com in a web browser (or use the iCloud app on your iPhone if you have it).</li>
+       <li>Log in to your iCloud account.</li>
+       <li> Select "Contacts".</li>
+       <li>Select all your contacts and then choose "Export vCard".</li>
+       <li>Download the vCard file to your iPhone.</li>
+     </ul>
+     <li>On your Android phone:</li>
+     <ul>
+      <li>Open the Contacts app.</li>
+      <li>Find the "Import" or "Import from vCard" option.</li>
+      <li>Select the downloaded vCard file.</li>
+      <li> Your contacts should now be imported to your Android phone.</li>
+     </ul>
+   </ol>
+   </p>
+  </div>
+  <hr>
+</div>
+
+<!-- ####################### Contacts iPhone Android END ############### -->
+
+<!-- ####################### NR Address' ############### -->
+
+<div id="AddressFinder" class="city" style="display:none">
+
+  <div style="margin: 0 11%;">
+  <h2>Fix SafeCom</H2>
+  
+  <p><a href="#" onclick="openAddress('address01')"></a>Address reveal</a></p>
+
+  <div id="address01" class="address" style="display:none>"
+    <p>Address details.</p>
+  </div>
+
+  <p>Use arrow keys to move the window.</p>
+  
+  </div><hr></div>
+  
+  <!-- ####################### NR Address' END ############### -->
+
+<!-- ####################### Fix SafeCom ############### -->
+
+<div id="SafeComFix" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>Fix SafeCom</H2>
+
+<p>Press Alt + Space when the app is in focus â this opens the window menu.</p>
+
+<p>Press M for Move.</p>
+
+<p>Use arrow keys to move the window.</p>
+
+</div><hr></div>
+
+<!-- ####################### Fix SafeCom END ############### -->
+<!-- ####################### iPhone photos to OneDrive ############### -->
+
+<div id="iPhoneOneDrive" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>iPhone photos to OneDrive</H2>
+
+<p><a href="https://nwrprod.service-now.com/now/nav/ui/classic/params/target/kb_view.do%3Fsys_kb_id%3D4f56d46d1b41465006c38665d34bcbbe%26searchTerm%3Didevice" target="_new">NRKB0012659</a></p>  
+
+<p><a href="https://support.microsoft.com/en-us/office/automatically-save-photos-and-videos-with-onedrive-on-ios-74d406bb-71d0-47c0-8ab8-98679fa1b72e">iPhone photos to OneDrive</a></p>
+<p>https://support.microsoft.com/en-us/office/automatically-save-photos-and-videos-with-onedrive-on-ios-74d406bb-71d0-47c0-8ab8-98679fa1b72e</p>
+
+</div><hr></div>
+
+<!-- ####################### iPhone photos to OneDrive END ############### -->
+<!-- ####################### Android Auhenticator ############### -->
+
+<div id="ZSAuthAndr" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>Android Authenticator</H2>
+
+<p><a href="https://play.google.com/store/apps/details?id=com.azure.authenticator&pcampaignid=web_share">Android Authenticator</a></p>
+<p>https://play.google.com/store/apps/details?id=com.azure.authenticator&pcampaignid=web_share</p>
+
+</div><hr></div>
+
+<!-- ####################### Android Auhenticator   END ############### -->
+
+<!-- ####################### Printer Explorer Problem ############### -->
+
+<div id="HW_Printers" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>Printers</H2>
+
+<p>shell:::{A8A91A66-3A7D-4424-8D24-04E180695C7A}</p>
+
+</div><hr></div>
+
+<!-- ####################### Printer Explorer  END ############### -->
+<!-- ####################### Power BI Problem ############### -->
+
+<div id="PwrBIProbs" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>Power BI Problem Reporting <PowerApps></H2>
+
+<p>Power BI Problem Reporting</p>
+<p><a href="https://networkrail.sharepoint.com/sites/GroupBIService/SitePages/Report-an-Incident.aspx?xsdata=MDV8MDJ8fDc3ZjIxZDU4OWM2MDQ2ZGZkNDFmMDhkZDU2NGRlY2MyfGMyMmNjM2UxNWQ3ZjRmNGRiZTAzZDVhMTU4Y2M5NDA5fDB8MHw2Mzg3NjE2MTQ4NDExNDAyNTV8VW5rbm93bnxWR1ZoYlhOVFpXTjFjbWwwZVZObGNuWnBZMlY4ZXlKV0lqb2lNQzR3TGpBd01EQWlMQ0pRSWpvaVYybHVNeklpTENKQlRpSTZJazkwYUdWeUlpd2lWMVFpT2pFeGZRPT18MXxMMk5vWVhSekx6RTVPalF4TXprellUZ3dZalE1T1RSalkyRmlObU5sWldaaVlXWTRaVGhsTkdVeVFIUm9jbVZoWkM1Mk1pOXRaWE56WVdkbGN5OHhOelF3TlRZME5qZ3pNVFl6fDVjNGM2ZWZiYTZlOTQyZTlkNDFmMDhkZDU2NGRlY2MyfDA2MWM2NzI1ZTFkOTQyZGViNWY4ZGZiNWY0MTcwY2Yz&sdata=THlWN2xuYlFQeVpsOWpmRTRBc09Jb2dXUEd0YStJb3Y3Ym03TGVRZGhjMD0%3d&ovuser=c22cc3e1-5d7f-4f4d-be03-d5a158cc9409%2cCJone101%40networkrail.co.uk&OR=Teams-HL&CT=1740564743361&clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiI0OS8yNTAxMzEwNjAxMyIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3d%3d&SafelinksUrl=https%3a%2f%2fnetworkrail.sharepoint.com%2fsites%2fGroupBIService%2fSitePages%2fReport-an-Incident.aspx" target="_new">Power BI Problem Reporting</a></p>
+
+
+
+</div><hr></div>
+
+<!-- ####################### Power BI  END ############### -->
+<!-- ####################### Toolkit ############### -->
+
+<div id="ToolKit" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>ToolKit <BOC Toolkits></H2>
+
+<p>BOC Tools (such as SSM Toolkit/ Fencing Boundary Capture/ MDM & IWOC)</p>
+<p><a href="https://nwrprod.service-now.com/now/nav/ui/classic/params/target/kb_view.do%3Fsysparm_article%3DNRKB0014363" target="_new">NRKB0014363 - Bulk Upload Tool Kit Basic Checks</a></p>
+<p><a href="https://nwrprod.service-now.com/sp?id=kb_article&table=kb_knowledge&sysparm_article=NRKB0010150&searchTerm=toolkits%20iWOC" target="_new">NRKB0010150 - Unable to download SSM and MDM Tookits from AIS Hub</a></p>
+<p><a href="https://networkrail.sharepoint.com/sites/asd/SitePages/Bulk-Upload-Tools.aspx" target="_new">SharePoint - Actual Tool Kit </a></p>
+<p><a href="https://nwrprod.service-now.com/sp?id=sc_cat_item&sys_id=c36c6f1ddbba6410a6247a76f39619c0&sysparm_category=49d9e11f1b3d38106d8ceb92b24bcb19" target="_new">ToolKit - Report Issues </a></p>
+
+
+</div><hr></div>
+
+<!-- ####################### Toolkit  END ############### -->
+
+<!-- ####################### LoginFormat  ############### -->
+
+<div id="LoginFormat" class="city" style="display:none">Users Login Formats
+
+<div style="margin: 0 11%;">
+<h2>User Login Format </H2>
+
+<p>Users Login Formats</p>
+<table width=80% border="1">
+<tr><th>Application</th><th>User Format</th><th>Password DB</th></tr>
+<tr><td>Apple iCloud </td><td>AppleID</td><td>Apple Pwd </td></tr>
+<tr><td>Ellipse </td><td>NR Username Only</td><td>NR Pwd </td></tr>
+<tr><td>Laptop / Desktop  </td><td>NR Username Only </td><td>NR Pwd </td></tr>
+
+<tr><td>PIN Point  </td><td>NR Username Only  </td><td>NR Pwd </td></tr>
+<tr><td>Printers  </td><td>Fob/Door-card and Username  </td><td>PUK and NR Pwd </td></tr>
+<tr><td>Office 365  </td><td>NR Username@networkrail.co.uk  </td><td>NR Pwd </td></tr>
+<tr><td>Oracle eBus  </td><td>NR Username Only </td><td>Oracle Pwd </td></tr>
+<tr><td>RailHub  </td><td>Full.name@networkrail.co.uk  </td><td>NR Pwd </td></tr>
+<tr><td>SSPR  </td><td>NR Username@networkrail.co.uk  </td><td>Authtication </td></tr>
+<tr><td>Standards  </td><td>NR Username Only  </td><td>NR Pwd </td></tr>
+</table>
+
+</div><hr></div>
+
+<!-- ####################### LoginFormat END ############### -->
+
+<!-- ####################### Escalation Script  ############### -->
+
+<div id="EscScript" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>Escalation Script</H2>
+
+<p>Use the template below to add Teams messages to Admin group chat</p>
+<div class="copytooltip">
+<p> - Teams  - Admin Chat</p>
+<textarea rows="7" cols="75" id="myInput(14)">
+Incident/Request Number: 
+Team: Admin/eBus
+What is the request type? Email access/New user account/Shared area etc: 
+Is the task in SLA? (if no please include how long): 
+Business impact- Financial\reputational\safety:
+
+A business Justification MUST be captured in order to escalate a ticket outside of SLA. If not provided please advise the user of their SLA time.
+ 
+Update the reference being chased with reason for call, what was advised/actioned  and any business justifications.
+
+</textarea>
+<button onclick="myFunction(14)" onmouseout="outFunc(14)">
+  <span class="copytooltiptext" id="myCopyTooltip(14)">Copy to clipboard</span>
+-
+  </button>
+
+</div>
+
+
+</div><hr></div>
+
+<!-- ####################### Escalation END ############### -->
+
+<!-- ####################### Amend Approvers############### -->
+
+<div id="AmedAppr" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>Amend REQ Approver</H2>
+
+<p>Amend REQ Approver</p>
+<a href="https://nwrprod.service-now.com/sp?id=sc_cat_item&table=sc_cat_item&sys_id=087c50181bfb4e90b470dc62b24bcb99&recordUrl=com.glideapp.servicecatalog_cat_item_view.do%3Fv%3D1&sysparm_id=087c50181bfb4e90b470dc62b24bcb99" target="_new">Amend Approver</a>
+
+
+</div><hr></div>
+
+<!-- ####################### Amend Approvers END ############### -->
+<!-- ####################### SSWOPS  ############### -->
+
+<div id="SSOWPs" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>SSOWPS</H2>
+
+<p>SSOWPS is now RailHub</p>
+<a href="https://networkrail.sharepoint.com/sites/RailHub/SitePages/User-Guides.aspx">RailHub Internal</a>
+<p><a href="https://networkrail.sharepoint.com/sites/RailHub/SitePages/Home_External.aspx">RailHub External</a>
+
+</div><hr></div>
+
+<!-- ####################### SSWOPS END ############### -->
+<!-- ####################### Outlook Sign in loop ############### -->
+
+<div id="Test" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>Outlook trying to Connect loop</H2>
+
+<p>Outlook trying to Connect loop - Error:...one monent</p>
+<a href="https://nwrprod.service-now.com/now/nav/ui/classic/params/target/kb_view.do%3Fsysparm_article%3DNRKB0014363">NRKB0014363</a>
+<p>C:\Users\MBright2\AppData\Local\Microsoft\Outlook chnage to Outlook.old</p>
+
+</div><hr></div>
+
+<!-- ####################### Outlook Sign in loop END ############### -->
+<!-- ####################### New Link  ############### -->
+
+<div id="New_Link" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>New Link</H2>
+
+<p>New Link</p>
+
+<a href="https://nwrprod.service-now.com/now/nav/ui/classic/params/target/kb_view.do%3Fsysparm_article%3DNRKB0014363">NRKB0014363</a>
+
+<p>new Link</p>
+
+</div><hr></div>
+
+<!-- ####################### New Link END ############### -->
+<!-- ####################### Teams MSI  ############### -->
+
+<div id="TeamsMSI" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>Download Teams installer</H2>
+
+<p>Install Teams from Fix of the week folder</p>
+<a href="#">G:\Servicedesk\1. IT Helpdesk Shared Knowledge Area\Fix of the Week</a>
+
+
+
+</div><hr></div>
+
+<!-- ####################### Teams MSI END ############### -->
+<!-- ####################### PUK  ############### -->
+
+<div id="PUK_Codes" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>PUK Codes</H2>
+
+<p>SafeCom - Puk Codes</p>
+<a href="https://nwrprod.service-now.com/sp?id=kb_article&table=kb_knowledge&sysparm_article=NRKB0014165&searchTerm=puk" target="_NEW">NRKB0014165</a> - KB for providing PUK Codes
+
+</div><hr></div>
+
+<!-- ####################### PUK END ############### -->
+<!-- ####################### Local Admin  ############### -->
+
+<div id="HW_LocAd" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>Local Admin</H2>
+
+<p>Username: <strong>.\W10firstlogon </strong></br>
+ 
+Password: <strong>TnstaAfl@1914R</strong></p>
+<a href="#">n/a</a>
+
+</div><hr></div>
+
+<!-- ####################### Test END ############### -->
+<!-- ####################### PPS  ############### -->
+
+<div id="EXT_PPS" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>Self Service Password Reset (SSPR) portal login</H2>
+
+<p><a href="http://pps.corp.ukrail.net/welcome.htm" target="_new">PPS Site Interenal</a></p>
+<p><a href="http://pps.networkrail.co.uk/welcome.htm" target="_new">PPS Site External</a></p>
+<p>Click here: <a href="https://nwrprod.service-now.com/sp?id=sc_cat_item&table=sc_cat_item&sys_id=a0bbca981bbb30106d8ceb92b24bcb53&recordUrl=com.glideapp.servicecatalog_cat_item_view.do%3Fv%3D1&sysparm_id=a0bbca981bbb30106d8ceb92b24bcb53" target="_new">PPS Request</a>
+</div><hr></div>
+
+<!-- ####################### PPS END ############### -->
+<!-- ####################### Test  ############### -->
+
+<div id="AD_Azure" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>Azure - Elevated Access</H2>
+
+<p><a href="https://portal.azure.com/?configHash=VL2ND5u_pCBk&iepolyfills=true&l=en.en-us&appPageVersion=5.0.303.11195290572.191119-0103#view/Microsoft_Azure_PIMCommon/ActivationMenuBlade/~/aadmigratedroles" target="_New">Azure - Elevated access</a></p>
+<p>Businsss Justification - ITHD1 Elevated access to assist NR Users</p>
+<span style="opacity: 0;"><textarea row=1 col=2 id="myInput(7)">ITHD1 Elevated access to assist NR Users</textarea></span>
+<div class="copytooltip">
+<div class="MoveButtonUp">
+<button onclick="myFunction(7)" onmouseout="outFunc(7)">
+  <span class="copytooltiptext" id="myCopyTooltip(7)">Copy to clipboard</span>
+  </button>
+</div>
+</div>
+<div class="MoveStuffUp">
+<p>CMD - dsregcmd /refreshprt
+<p>.Net version CMD: reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\full" /v version
+</div>
+<br>
+
+<div class="w3-third W3-center">
+<span style="opacity: 0;"><textarea row=1 col=2 id="myInput(13)">
+-ASPwd</textarea></span>
+<div class="copytooltip"><div class="MoveStuffUp">
+<div class="MoveStuffUp">
+<button onclick="myFunction(13)" onmouseout="outFunc(13)">
+  <span class="copytooltiptext" id="myCopyTooltip(13)">Copy ...</span>
+  </button>
+</div>
+</div>
+</div>
+</div>
+
+<div class="w3-third W3-center">
+<span style="opacity: 0;"><textarea row=1 col=2 id="myInput(25)">
+-AW_Pwd</textarea></span>
+<div class="copytooltip"><div class="MoveStuffUp">
+<div class="MoveStuffUp">
+<button onclick="myFunction(25)" onmouseout="outFunc(25)">
+  <span class="copytooltiptext" id="myCopyTooltip(25)">Copy .--</span>
+  </button>
+</div>
+</div>
+</div>
+</div>
+
+<div class="w3-third W3-center">
+<span style="opacity: 0;"><textarea row=1 col=2 id="myInput(26)">
+IT Service Operations</textarea></span>
+<div class="copytooltip"><div class="MoveStuffUp">
+<div class="MoveStuffUp">
+<button onclick="myFunction(26)" onmouseout="outFunc(26)">
+  <span class="copytooltiptext" id="myCopyTooltip(26)">Copy ... -</span>
+  </button>
+</div>
+</div>
+</div>
+</div>
+
+
+</div>
+<hr>
+</div>
+<!-- ####################### Test END ############### -->
+<!-- ####################### S_Now Tags  ############### -->
+
+<div id="S_Now-Tag" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>S-Now Tags</H2>
+
+<p><span style="color:tomato"><strong>LTR â KB Outside Remit</strong></span> â This is to be used when there is knowledge available in SNOW but ITHD do not have right to complete fix or the fix takes too long to complete on first time.</br>
+
+<span style="color:tomato"><strong>No KB Fix Available</strong></span> â This is to be used when there is know knowledge available in SNOW for this issue. </br>
+
+ 
+
+<span style="color:tomato">LT - Assigned</span> - Is to be used by ITHD or 2nd Line Support when Live transfer has been used successfully. </br>
+
+<span style="color:tomato">LTR - CDQ</span> - Will be applied by 2nd Line Support following normal CDQ framework. </br>
+
+<span style="color:tomato">LTR - FT Fix</span> - Will be applied by 2nd Line Support upon resolution of issue. </p> 
+</div><hr></div>
+
+<!-- ####################### S_Now Tags END ############### -->
+<!-- ####################### Azure Admin  ############### -->
+
+<div id="AD_AdminPwd" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>Azure Admin</H2>
+
+<ol>
+<li>Go to My roles in Azure My roles - <a href="https://portal.azure.com/#home" target="_new">Microsoft Azure and activate Microsoft Entra Joined Device Local Admin</a> for 2 hours with the justification - Installing 4cs software</li>
+<li>Open a command prompt and run dsregcmd /refreshprt</li>
+<li>If prompted to sign in after running something as admin, sign in with your normal username@networkrail.co.uk</li>
+</ol>
+</div><hr></div>
+
+<!-- ####################### Azure Admin END ############### -->
+<!-- ####################### Non Standard Catch All Request  ############### -->
+
+<div id="NSCAR" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>Non Standard Catch All Request</H2>
+
+<p><a href="https://nwrprod.service-now.com/now/nav/ui/classic/params/target/com.glideapp.servicecatalog_cat_item_view.do%3Fv%3D1%26sysparm_id%3D3a56e6321b6ef4506d8ceb92b24bcbd3%26sysparm_link_parent%3Db0792ef21b6ef4506d8ceb92b24bcb52%26sysparm_catalog%3De0d08b13c3330100c8b837659bba8fb4%26sysparm_catalog_view%3Dcatalog_default" target="_NEW">Non Standard Catch All Request</a></p>
+</div><hr></div>
+
+<!-- ####################### Non Standard Catch All Request END ############### -->
+
+<!-- ####################### eLeaning Help  ############### -->
+
+<div id="eLearning_Help" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>eLearning Help</H2>
+
+<p>eLearning Help</p>
+<a href="https://networkrail.sharepoint.com/sites/OracleEBS/SitePages/Call-Logging.aspx#e-learning-issues" target="_new">eLearning Help</a>
+
+</div><hr></div>
+
+<!-- ####################### eLeaning Help End ############### -->
+
+<!-- ####################### Test  ZSWeBlck############### -->
+
+<div id="ZSWeBlck" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>Zscaler Browser Isolation</H2>
+
+<p>Zscaler â Browser Isolation</p>
+<p>You can recognise this by a pop up just underneath the address bar and by the URL which will start: <a href="https://32980588.isolation.zscaler.com/" target="_new">https://32980588.isolation.zscaler.com/</a>. </p>
+
+<p>Browser isolation means that anyone accessing the link will not be able to:</p>
+<ul>
+<li>Copy and paste to/ from the website.</li>
+<li>Transfer files to/from the website</li>
+<li>Print from the website</li>
+<li>Input text to the website</li>
+<li>Open attached office files</li>
+<li>Local browser rendering is switched off.</li>
+</ul>
+<p>If a user needs to have these functionalities added to a website, please check the website is legitimate, and has a 100% clean rating on <a href://"https://www.virustotal.com/">https://www.virustotal.com/</a>. If you are satisfied it is not malicious, then you can request it be recategorized from miscellaneous here: <a href="https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fsitereview.zscaler.com%2F&data=05%7C02%7CChris.Jones5%40networkrail.co.uk%7C2e93aac3844649e5f05808dc798591ed%7Cc22cc3e15d7f4f4dbe03d5a158cc9409%7C0%7C0%7C638518861791151329%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=WRJe%2Bz5MuKHpX8oi26QN%2BChwdssD9gYeOgd5cvNSsNk%3D&reserved=0" target="_new">Site Review - URL Category Lookup Tool | Zscaler</a>. Just enter the URL, suggest the correct category and provide the reasoning / evidence. The official response time is up to 14 days however security has informed us that they normally receive a response the next day.</p>
+
+<p>The above will be created into a customer facing knowledge article for user to action themselves. Security have managed to manually go through a lot of the âmiscellaneousâ websites and whitelisted those which they believe to be trusted in order to cut down on inconvenience to users and calls to ourselves. If you do receive any calls please follow the process above which will be outlined in the <span class style="color:Tomato;">Zscaler â Browser Isolation</span> template. </p>
+<p>For urgent enquiries, where a user requires same day access to the website, please complete the bottom half of the script and assign to security. They will be able to manually recategorise the link. Users MUST have a strong business justification for this to be actioned the same day. </p>
+
+<p><a href="https://32980588.isolation.zscaler.com/" target="_new">https://32980588.isolation.zscaler.com/</a></p>
+<p><a href="https://www.virustotal.com/" target="_new">https://www.virustotal.com/</a></p>
+<p><a href="https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fsitereview.zscaler.com%2F&data=05%7C02%7CChris.Jones5%40networkrail.co.uk%7C2e93aac3844649e5f05808dc798591ed%7Cc22cc3e15d7f4f4dbe03d5a158cc9409%7C0%7C0%7C638518861791151329%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=WRJe%2Bz5MuKHpX8oi26QN%2BChwdssD9gYeOgd5cvNSsNk%3D&reserved=0" target="_new">Site Review - URL Category Lookup Tool | Zscaler</a></p>
+<p><a href="https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.browserling.com%2F&data=05%7C02%7CChris.Jones5%40networkrail.co.uk%7C22dabedcdc09495efe2208dc7efe1e50%7Cc22cc3e15d7f4f4dbe03d5a158cc9409%7C0%7C0%7C638524877100926264%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=r%2FtpzlANaIXcIg2O3d%2FUTUxjP4UjszF%2BgTPZ%2F3u9Y9I%3D&reserved=0" target="_new">Browserling â Online cross-browser testing</a></p>
+
+</div><hr></div>
+
+<!-- ####################### Test END ############### -->
+<!-- ####################### Wifi 101  ############### -->
+
+<div id="Wifi-101" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>Wifi 101 </H2>
+
+<p>Wifi 101 </p>
+<p><a href="https://sponsor.corp.ukrail.net:8443/sponsorportal/PortalSetup.action?portal=17418482-e93f-11e6-8261-6cae8b6604c0" target="_new">Wifi 101</a> </p>
+
+</div><hr></div>
+
+<!-- ####################### Wifi 101   END ############### -->
+<!-- ####################### DTP Graveyarding  ############### -->
+
+<div id="AD_Grvyrd" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>DTP Graveyarding </H2>
+
+<p>DTP Graveyarding </p>
+<p>OU: corp.UKrail.net/EndUserServices/Data Management/DTP Graveyarding </p>
+
+</div><hr></div>
+
+<!-- ####################### DTP Graveyarding   END ############### -->
+<!-- ####################### eLearning Reset ############### -->
+
+<div id="eL_Reset" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>eLearning Issues</H2>
+
+<p>eLearning Issues</p>
+<a href="https://nwrprod.service-now.com/sp?id=sc_cat_item&table=sc_cat_item&sys_id=ad22d3c51be8fc90ecf699b2b24bcb3c" target="_NEW">eLearning Issues</a>
+
+</div><hr></div>
+
+<!-- ####################### eLearning Reset  END ############### -->
+<!-- ####################### Business Analystics  ############### -->
+
+<div id="SoftBA" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>Business Analystics</H2>
+
+<p><strong>Please see the notification below regarding Business Analytics service hour changes.</strong></p> 
+
+<p>Business Analytics usually opens to users at 06:00 daily, it has been delayed till 07:45 from now on to let the ETL complete before users hammer the system with reporting. </p>
+
+<p>Just so you are aware as some users start early and might ring the helpdesk to complain BA is down. They just need telling that Business Analytics opens at 8am from now on.
+</p>
+<a href="./Test.htm">test</a>
+
+</div><hr></div>
+
+<!-- ####################### Business Analystics END ############### -->
+<!-- ####################### Bios Error  ############### -->
+
+<div id="Bios_Fail" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>Bios Update Failed</H2>
+
+<p><strong>Steps to be taken by ITHD1:</strong></p>
+<ol>
+<li> Unplug the power cable and disconnect external devices. </li>
+<li> Press and hold the power button for at least 15 seconds, this should turn off the machine</li>
+<li> Wait for 1 minute, and then press the power button to turn ON the machine.</li>
+<li> Machine should boot up normally and should present the login screen to the user.</li>
+</ol>
+<p><strong>User to Attemp:</strong></p>
+<ol start="5">
+<li> If the above steps do not work and the device is a laptop, keep the power cable disconnected and let the battery drain out so that device could turn off. Once device is turned off ,connect it back to the power supply , turn it ON and it should boot straight to Windows.</li>
+</ol>
+<p><strong>Steps to be taken via 2nd Line Supp:</strong></p>
+<ol start="6">
+<li> If BIOS update is showing âFailedâ in Software Center, please restart the machine and disconnect all the external devices except power cable and retry the BIOS update installation from Software Center.</i>
+<li> If above steps do not resolve the issue, send the ticket to HCL SCCM Scheduling queue to check this further.</li>
+</ol>
+ 
+<p>If then passing a ticket to HCL, please add a note to advise all steps have been taken.</p>
+
+</div><hr></div>
+
+<!-- ####################### Bios Error END ############### -->
+
+<!-- ####################### Test  ############### -->
+
+<div id="New_test" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>New Test</H2>
+
+<p>New Test</p>
+<a href="./Test.htm">New test</a>
+
+</div><hr></div>
+
+<!-- ####################### Test END ############### -->
+
+<!-- ####################### Test  ############### -->
+
+<div id="test" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>Test</H2>
+
+<p>Test</p>
+<a href="./Test.htm">test</a>
+
+</div><hr></div>
+
+<!-- ####################### Test END ############### -->
+
+<!-- ####################### Bitlocker CDM  ############### -->
+
+<div id="Bitlocker" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>BitLocker</H2>
+
+<p>Take the 1st 8 digits of the Key ID</p>
+<a href="./EdgePvt-BitLocker.cmd" download>Bitlocker Console</a>
+
+</div><hr></div>
+
+<!-- ####################### Bitlocker CDM END ############### -->
+
+
+<!-- ####################### MFA Change Phone  ############### -->
+
+<div id="AD_MFA" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>User Account - MFA Change Phone </H2>
+
+<p><a href="https://mysignins.microsoft.com/security-info" target="_new">https://mysignins.microsoft.com/security-info</a></p>
+
+</div><hr></div>
+
+<!-- ####################### MFA Change Phone End ############### -->
+<!-- ####################### Work Experience  ############### -->
+
+<div id="AD_WorkExp" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>User Account - Work Experience </H2>
+
+<p>\\msqv01fc01\groups\IT HELPDESK\SIM Team\Work_Experience_Account</p>
+
+</div><hr></div>
+
+<!-- ####################### Work Experience End ############### -->
+<!-- ####################### Reharvesting - Rationalisation  ############### -->
+
+<div id="SoftReHav" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>Reharvesting - Software Rationalisation</H2>
+
+<p><a href="https://networkrail-my.sharepoint.com/:x:/r/personal/kglover1_networkrail_co_uk/Documents/SAM/Re-Harvesting/Software Rationalisation with usernames.xlsx?d=w178b8b7982024213a9b760c97a474598&csf=1&web=1&e=mXK8V1">Reharvesting - Rationalisation</a></p>
+<p><strong>URL:</strong> https://networkrail-my.sharepoint.com/:x:/r/personal/kglover1_networkrail_co_uk/Documents/SAM/Re-Harvesting/Software Rationalisation with usernames.xlsx?d=w178b8b7982024213a9b760c97a474598&csf=1&web=1&e=mXK8V1</p>
+
+</div><hr></div>
+
+<!-- ####################### Reharvesting - Rationalisation End ############### -->
+<!-- ####################### Text to User  ############### -->
+
+<div id="AD_Txt" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>Text to User</H2>
+<p>\\Msqv01fc01\groups\IT HELPDESK\SIM Team\</p>
+<p>Open the task pad <br>
+Click the helpdesk tab<br>
+Click page one (<a href="https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.pageone.co.uk%2F&data=05%7C01%7CLuke.Mcdonnell%40networkrail.co.uk%7Caec803932aa5480f787108da8b3e38fe%7Cc22cc3e15d7f4f4dbe03d5a158cc9409%7C0%7C0%7C637975396602012504%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=xU2pndewmMi3TAdUeQgOoT6o1aRpv9xX7ErkOCJ7M%2F4%3D&reserved=0" target="_new">PageOne Communications | Secure Mobile Solution | SMS System</a>)<br>
+Click Account log in<br>
+Username: <strong>sfostersharples</strong><br>
+Password: Smart2015<br>
+Click the compose tab (left)<br>
+Click SMS<br>
+In the âToâ box, enter the users mobile number<br>
+In the template box, click on the âIT Helpdesk â SSPR Textâ option<br>
+Click Send</p>
+
+</div><hr></div>
+
+<!-- ####################### Text to User End ############### -->
+<!-- ####################### ITHD1 Mapping  ############### -->
+
+<div id="HD_Map" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>ITHD1 Mapping</H2>
+
+<p>G:
+\\RSNW-MRH-F02\NW05GROUPS<br />
+M:
+\\RSNW-MRH-H01\Appsserver<br />
+V:
+\\UKRDC3SDC43013\DFSRoot$<br /></p>
+H:
+Access denied fix - <a href="https://nwrprod.service-now.com/now/nav/ui/classic/params/target/kb_view.do%3Fsys_kb_id%3D6bbf5cd31bbe59d0d94b9828b04bcb6f%26searchTerm%3D%2520h%2520drive" target="_new">NRKB0013481</a><br /></p>
+
+</div><hr></div>
+
+<!-- ####################### ITHD1 Mapping End ############### -->
+<!-- ####################### Email ads  ############### -->
+
+<div id="Emailadds" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>Email Address'</H2>
+<p><strong>iDevices Mobile Data</strong> <a href="mailto:Routeservicerequestfulfilment@networkrail.co.uk">Routeservicerequestfulfilment@networkrail.co.uk</a> - If user can't use mobile data for work phone<br />
+
+<strong>M2 Helpdesk</strong> on 08457 660 205 or email at: <a href="mailto:"service.desk@m2.uk.com">service.desk@m2.uk.com.</a><br />
+
+<a href="mailto:"Endusersupport@networkrail.co.uk">Endusersupport@networkrail.co.uk</a> - for <strong>End User Support</strong> Ticket<br />
+
+<a href="mailto:"ITHDProcurementmanchester@networkrail.co.uk">ITHDProcurementmanchester@networkrail.co.uk</a> - This is for <strong>Hardware Request</strong> updates<br />
+
+
+<a href="mailto:"RouteServicesMobileDeviceProvisioning@networkrail.co.uk">RouteServicesMobileDeviceProvisioning@networkrail.co.uk</a> - This is for <strong>iDevice request updates/ MDP to collect their broken iDevice</strong>><br />
+
+<strong>IProcurement:</strong> <a href="mailto:"ITHDProcurementManchester@networkrail.co.uk">ITHDProcurementManchester@networkrail.co.uk</a><br />
+
+<strong>SIM:</strong> <a href="mailto:"Servicecentreincidentmangement@networkrail.co.uk">Servicecentreincidentmangement@networkrail.co.uk</a><br />
+
+<strong>MYIT:</strong> <a href="mailto:"MYIT@networkrail.co.uk">MYIT@networkrail.co.uk</a> - Update user on where their win 10 at/ when they might migrated to ExO<br />
+
+Blink: <a href="mailto:"Blinkcomms@networkrail.co.uk">Blinkcomms@networkrail.co.uk</a><br />
+
+<a href="mailto:"ITHDSIM@networkrail.co.uk">ITHDSIM@networkrail.co.uk</a> - To raised a <strong>MI</strong> (This is for me).<br />
+
+<a href="mailto:"Softwareassetmanagementteam@networkrail.co.uk">Softwareassetmanagementteam@networkrail.co.uk</a>- Dealing with software transfers that <strong>users can't find on software catalogue.</strong><br />
+
+<a href="mailto:"Spamandphishing@networkrail.co.uk">Spamandphishing@networkrail.co.uk</a>- For when users get a <strong>phishing emails</strong> or they think it's an phishing. <br />
+
+<a href="mailto:"Devicedeactivation@networkrail.co.uk">Devicedeactivation@networkrail.co.uk</a> - User will need to email this team about their <strong>win 7 devices</strong> if they need anything from the machine.<br />
+
+<a href="mailto:"Asksecurity@networkrail.co.uk">Asksecurity@networkrail.co.uk</a> - Ask about <strong>lock screen being extended</strong> (if possible).<br />
+
+<a href="mailto:"MyConnect@networkrail.co.uk">MyConnect@networkrail.co.uk</a> - Any <strong>My Connect</strong> problem user are having redirect them to here<br />
+
+PSC Team - <a href="mailto:"RSBusinessServiceSupport@networkrail.co.uk">RSBusinessServiceSupport@networkrail.co.uk</a> for any chase up tickets with <strong>PSC Team</strong>. <br />
+
+<strong>Portal Questions</strong> -  <a href="mailto:"PortalFeedback@networkrail.co.uk">PortalFeedback@networkrail.co.uk</a><br />
+
+<strong>eLearningAdmin@networkrail.co.uk</strong> -  <a href="mailto:"eLearningAdmin@networkrail.co.uk">eLearningAdmin@networkrail.co.uk</a><br />
+
+<strong>Spam Emails</strong> - <a href="mailto:"spamandphishing@networkrail.co.uk">spamandphishing@networkrail.co.uk</a></p>
+
+
+
+<p><strong>External MFA</strong></a>
+<p>For generic External users: <a href="mailto:Neil.Whitaker@networkrail.co.uk">Neil.Whitaker@networkrail.co.uk</a></p>
+<p>For Standards: <a href="mailto:jonathan.curtis@networkrail.co.uk">jonathan.curtis@networkrail.co.uk</a></p>
+
+</div><hr></div>
+
+<!-- ####################### Email Ads End ############### -->
+<!-- ####################### Ext No Sponsors  ############### -->
+
+<div id="EXT_NoSpon" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>External users with no sponsor</H2>
+
+<p>For generic External users: <a href="mailto:Neil.Whitaker@networkrail.co.uk">Neil.Whitaker@networkrail.co.uk</a></p>
+<p>For Standards: <a href="mailto:jonathan.curtis@networkrail.co.uk">jonathan.curtis@networkrail.co.uk</a></p>
+
+</div><hr></div>
+
+<!-- ####################### Ext No Sponsors End ############### -->
+<!-- ####################### Procurement and returns  ############### -->
+<div id="HW_Proc" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>Hardware returns</H2>
+
+<p><strong>Laptops and accessories</strong></p>
+<p><a href="mailto:ITHDProcurementManchester@networkrail.co.uk">ITHDProcurementManchester@networkrail.co.uk</a></p>
+<p><a href="https://nwrprod.service-now.com/sp?id=sc_cat_item&table=sc_cat_item&sys_id=688df1a81b4451106d8ceb92b24bcbca" target="_new">Return of IT Equipment</p>
+
+<p><a href="mailto:ServiceCentreIncidentManagement@networkrail.co.uk"> To change delivery address ServiceCentreIncidentManagement@networkrail.co.uk</a>
+
+<p><strong>iDevices</strong></p>
+<p><a href="mailto:RouteServicesMobileDeviceProvisioning@networkrail.co.uk">RouteServicesMobileDeviceProvisioning@networkrail.co.uk</a><br />
+If iPad or iPhone screen is cracked, check with O2 if still in Warranty</p>
+
+</div><hr></div>
+
+<!-- ####################### Procurement and returns End ############### -->
+<!-- ####################### ZScaler Credentials Guard  ############### -->
+<div id="ZSCredGrd" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>ZScaler - Credentials Guard</H2>
+
+<p><a href="https://nwrprod.service-now.com/now/nav/ui/classic/params/target/kb_view.do%3Fsys_kb_id%3Dd1fec8e31b9d751406c38665d34bcbb4">NRKB0012666</a></p>
+
+</div><hr></div>
+
+<!-- ####################### ZScaler Credentials Guard End ############### -->
+<!-- ####################### Extended/Mat Leave List  ############### -->
+<div id="TeamsMSI" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>Teams MSI</H2>
+
+<p>G:\Servicedesk\1. IT Helpdesk Shared Knowledge Area\Fix of the Week\MSTeams-x64 (1).msix</p>
+
+</div><hr></div>
+
+<!-- ####################### Extended/Mat Leave End ############### -->
+<!-- ####################### Extended/Mat Leave List  ############### -->
+<div id="AD_ExtMatLv" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>Extended / Maternity Leave </H2>
+
+<p>Script: Security - Extended Leave / Mat leave</p>
+
+</div><hr></div>
+
+<!-- ####################### Extended/Mat Leave End ############### -->
+<!-- ####################### Ext Contact List  ############### -->
+<div id="EXT_List" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>External Contact List </H2>
+
+<p><a href="https://www.networkrail.co.uk/external-system-support/">Ext Contact List  </a></p>
+
+</div><hr></div>
+
+<!-- ####################### Ext Contact List End ############### -->
+<!-- ####################### Disable Check  ############### -->
+<div id="AD_DisChk" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>Disable Check</H2>
+
+<p><a href="https://nwrprod.service-now.com/now/nav/ui/classic/params/target/kb_view.do%3Fsys_kb_id%3D81a3f8d61b487d5406c38665d34bcb1e">Disable Check</a></p>
+
+
+
+</div><hr></div>
+
+<!-- ####################### Disable Check End ############### -->
+<!-- ####################### Ext NESA  ############### -->
+<div id="EXT_NESA" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>External Access NESA </H2>
+
+<p><a href="https://networkrail-my.sharepoint.com/:b:/g/personal/abebbing_networkrail_co_uk1/Eb4miRd5fUFJjX1cD9By7Z8B6Urj1-Q_WtRZE49FivGzlw?e=ePKyEe">NESA Links  </a></p>
+
+
+
+</div><hr></div>
+
+<!-- ####################### Ext NESA End ############### -->
+<!-- ####################### Ext Standards  ############### -->
+
+<div id="EXT_Stnd" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>External Access to Standards </H2>
+
+<p><a href="https://forms.office.com/pages/responsepage.aspx?id=4cMswn9dTU--A9WhWMyUCfKSnCkX1KRNrISwnYEIcuFUQUpRNVlaUzdQTzRFMDRVNEQ1TTVHRTExUy4u" target="_New">Standards Form  </a></p>
+<p><a href="https://standardse-networkrail.msappproxy.net/" target="_New">Actual Standards Home page</a></p>
+
+<p>If no response from form, email: <a href="mailto:standardsmanagement@networkrail.co.uk">standardsmanagement@networkrail.co.uk</a></p>
+
+<p><a href="mailto:Neil.Whitaker@networkrail.co.uk">neil.whitaker</a></p>
+
+
+</div><hr></div>
+
+
+
+<!-- ####################### Ext Standards End ############### -->
+<!-- ####################### Wifi CMD  ############### -->
+
+<div id="Wifi-CMD" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>Wifi - CMD</H2>
+
+<h2><a href="https://nwrprod.service-now.com/kb_view.do?sys_kb_id=90e0092b1b090154d94b9828b04bcb59">NRKB0012512  </a></h2>
+<p>The above KB shows a user how to enable their Wifi</a>
+<p>List availble adapters:</p>
+<p><strong>netsh interface show interface</strong></p>
+<p>Solution:</p>
+<p><strong>netsh interface set interface name="WiFi" enable</strong></p>
+
+
+</div><hr></div>
+
+
+
+<!-- ####################### Wifi CMD End ############### -->
+<!-- ####################### Email Access another persons mailbox  ############### -->
+
+<div id="Exc_Access" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>Email - How to allow another colleague to have access to their emails</H2>
+
+<h2><a href="https://nwrprod.service-now.com/now/nav/ui/classic/params/target/kb_view.do%3Fsysparm_article%3DNRKB0013454">NRKB0013454</a></h2>
+<p>The above KB shows a user how to allow another colleague to have access to their emails</a>
+
+<h2>Email - Requesting access to another person emails</H2>
+<p>Script - Security - Access Colleague mailbox/OneDrive</p>
+<div class="w3-small w3-panel w3-light-grey w3-left-align";">
+<p>A quick reminder we need to be very specific with what it is that the person needs access to within the onedrive/mailbox they are requesting, full access to another users mailbox/onedrive once they have left is very very likely to be denied</p>
+</div>
+
+</div><hr></div>
+
+
+
+<!-- ####################### Email Access another persons mailbox  End ############### -->
+<!-- ####################### SP Standards ############### -->
+
+<div id="SPStndrds" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+<h2>SP Standards (Ext)</H2>
+
+<h2>Template Script: NR Standards Portal - MFA Change</h2>
+<p><a href="https://forms.office.com/pages/responsepage.aspx?id=4cMswn9dTU--A9WhWMyUCfKSnCkX1KRNrISwnYEIcuFUQUpRNVlaUzdQTzRFMDRVNEQ1TTVHRTExUy4u&utm_campaign=CL_ML_EPD_Network%20Rail%20Announcement%20Upda_NA_e-production_E-160786_ML_0828_0630&utm_medium=email&utm_source=Eloqua" target="-new">Network Rail - Standards Account Request</a></p> <p style="color:tomato;">AVAILABLE EXTERNALLY</p>
+<p>Request Sponsor to contact Jonathan Curtis: jonathan.curtis@networkrail.co.uk</p>
+<div class="w3-small w3-panel w3-light-grey w3-left-align";">
+<p>Just an FYI - The NR standards MFA has been updated to include a contact for their sponsor. Anyone who is using NR standards and needs their MFA reset will need to contact Jonathan Curtis with the reference of the call so that he can email approvals </p>
+</div>
+
+</div><hr></div>
+
+
+
+<!-- ####################### SP Standards End ############### -->
+<!-- #######################  Mailbox ############### -->
+<div id="Mbox" class="city" style="display:none">
+<div style="margin: 0 11%;">
+<H2>IT Helpdesk Mailbox Process Documentation</H2>
+<p><a href="https://nwrprod.service-now.com/now/nav/ui/classic/params/target/kb_view.do%3Fsys_kb_id%3D79bc50db1b3ee95086ee43f5e34bcbfd">NRKB0013837</a>
+<p><a href="https://nwrprod.service-now.com/sys_attachment.do?sys_id=8e2edcd71b7ee95086ee43f5e34bcb37">IT Helpdesk Mailbox Process Doc 2023.pdf</a>
+<ul>
+  <li><a href="https://nwrprod.service-now.com/now/nav/ui/classic/params/target/com.glideapp.servicecatalog_cat_item_view.do%3Fv%3D1%26sysparm_id%3D3a56e6321b6ef4506d8ceb92b24bcbd3%26sysparm_link_parent%3Db0792ef21b6ef4506d8ceb92b24bcb52%26sysparm_catalog%3De0d08b13c3330100c8b837659bba8fb4%26sysparm_catalog_view%3Dcatalog_default">Logging iSuppliers</a></li>
+  <li><strong>ESWUSER ESWUSER</strong></li>
+
+   <li><a href="https://nwrprod.service-now.com/kb_view.do?sysparm_popup=true&sysparm_no_info=true&sysparm_rank=1&sysparm_tsqueryId=170409ee1b500218393843b6b04bcbbb&sysparm_no_create=true&sysparm_stack=no&sysparm_no_create_incident=true&sysparm_context=popup&sys_kb_id=9c94c5181be6e190393843b6b04bcb67&sysparm_no_update=true&sysparm_no_history=true&sysparm_no_suggest=true&sysparm_no_rating=true">Logging iSupplier and Career Requests</a></li>
+  </ul>
+</p><p>
+<div class="w3-small w3-panel w3-light-grey w3-left-align" style="font-family:courier;">
+<p>n/a
+</div>
+<div class="w3-panel w3-blue w3-card-4 w3-small w3-round-xlarge" >
+<h4>Resolver teams</h4>
+<ul>
+<li>n/a</li>
+</ul>
+</div>
+</p>
+
+</div><hr></div>
+
+<!-- #######################  Mailbox End ############### -->
+
+<!-- ####################### AD Disable ############### -->
+
+<div id="AD_Disable" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+
+<H2><a href="https://nwrprod.service-now.com/now/nav/ui/classic/params/target/kb_view.do%3Fsys_kb_id%3D8aa241a21bc3f150d94b9828b04bcbe1">NRKB0013781</a></H2>
+
+
+<h2>AD Disable Account</h2>
+<p>Disable AD</p>
+<p>Description in AD to 'DO NOT ENABLE ACCOUNT: REF ***</p>
+
+<h2>Azure Disable Account</h2>
+<p><a href="https://portal.azure.com/#home">Azure</a></p>
+<p>Search: Microsoft Entra Privileged Identity Management</a>
+<p>Duration for 1hour and Justification âDisable Account Request. Ref***</p>
+
+</div><hr></div>
+
+
+
+<!-- ####################### AD Disable End ############### -->
+<!-- ####################### -A Admin ############### -->
+<div id="AdminPwd" class="city" style="display:none">
+<div style="margin: 0 11%;">
+<H2>AdminPwd</H2>
+<h2>Template Script: Account Services - -A</h2>
+<p>Assign to DXC Incident and Request</p>
+
+</div><hr></div>
+
+<!-- ####################### -A Admin End ############### -->
+<!-- ####################### SharePoint Excel ############### -->
+
+<div id="SPExcel" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+
+<H2>Admins and Ownership</H2>
+
+<h2>SharePoint</h2>
+
+<p><a href="https://networkrail.sharepoint.com/:x:/r/sites/HubtoSPO/_layouts/15/Doc.aspx?sourcedoc=%7B6F97D01E-C62F-4BD9-B86A-632F6AC7C8BA%7D&file=Hub%20to%20SPO%20Migration%20status%20ELS%20or%20BAU.xlsx&wdLOR=c4E1054CA-E3F7-4904-BAD8-7AB11EA2600A&action=default&mobileredirect=true&cid=b57501f9-54b2-4615-866a-252da8da43e5&CID=115292D3-5CAD-4C1F-ADEC-3DD5856C7EF8">SP Site Admins and Ownership</a></p>
+
+
+
+</div><hr></div>
+
+
+
+<!-- ####################### SharePoint Excel End ############### -->
+<!-- ####################### -Info Screen Admin ############### -->
+
+<div id="InfoScreen" class="city" style="display:none">
+
+<div style="margin: 0 11%;">
+
+<H2>Station</H2>
+
+<h2>Damaged Info Screens</h2>
+
+<p>Digital Signage - Station OIS script</p>
+
+
+
+</div><hr></div>
+
+
+
+<!-- ####################### -Info Screen ############### -->
+<!-- ####################### AD HW Software Policy  ############### -->
+<div id="AD_AddGP" class="city" style="display:none">
+<div style="margin: 0 11%;">
+<H2>Add AD Policy</H2>
+<p> 
+
+<table border=1>
+<tr>
+<td>Project 2016 Standard</td><td>	A#-MicrosoftOfficeProject365Std	</td><td>A#-Uninstall-MicrosoftOfficeProject365Std</td></tr>
+<tr>
+<td>Visio 2016 Standard	</td><td>A#-MicrosoftOfficeVisio365Std	</td><td>A#-Uninstall-MicrosoftOfficeVisio365Std</td></tr>
+<tr>
+<td>Visio 2016 Professional 	</td><td>A#-MicrosoftOfficeVisio365Pro</td><td>	A#-Uninstall-MicrosoftOfficeVisio365Pro</td></tr>
+<tr>
+<td>Nitro Pro</td>
+<td>A#-GoNitroNitroPro14.14.0.13</td>
+<td>A#-Uninstall-GoNitroNitroPro14.14.0.13</td>
+</tr>
+</table>
+
+<p><a href="https://networkrail-my.sharepoint.com/:x:/r/personal/kglover1_networkrail_co_uk/Documents/SAM/Re-Harvesting/Software Rationalisation with usernames.xlsx?d=w178b8b7982024213a9b760c97a474598&csf=1&web=1&e=mXK8V1"> Software Harvesting</a>
+
+
+</div><hr></div>
+
+<!-- ####################### AD HW Software Policy End ############### -->
+<!-- ####################### ZScaler ############### -->
+<div id="ZSFWAV" class="city" style="display:none">
+<div style="margin: 0 11%;">
+<H2>Zscaler</H2>
+<p> Zscaler FW/AV Endpoint error - NRKB0014246</p>
+
+<ul>
+<li><a href="https://nwrprod.service-now.com/now/nav/ui/classic/params/target/kb_view.do%3Fsys_kb_id%3Dd3cad2e51b67b154393843b6b04bcb02" target="_new">FW/AV Endpoint error</a></li>
+<ul>
+<li>https://nwrprod.service-now.com/now/nav/ui/classic/params/target/kb_view.do%3Fsys_kb_id%3Dd3cad2e51b67b154393843b6b04bcb02</li>
+</ul>
+<li>...</li>
+</ul>
+
+<div class="w3-small w3-panel w3-light-grey w3-left-align" style="font-family:courier;">
+<p><strong>Script:</strong> ZScaler - Problem</p>
+<p>Please review the knowledge base and attempt resolution before logging a ticket</p>
+<p>Description of issue:</p>
+<p>Contact Number:</p>
+<p>Assign to 2nd Line Support</p>
+</div>
+<h4>Note:</h4>
+<p></p>
+<div class="w3-panel w3-blue w3-card-4 w3-small w3-round-xlarge" >
+<h4>Resolver teams</h4>
+<ul>
+<li>ITHD1</li>
+<li>Assign to 2nd Line Support</li>
+
+</ul>
+</div>
+
+</div><hr></div>
+
+<!-- ####################### ZSCaler End ############### -->
+<!-- ####################### CCR  ############### -->
+<div id="ccr" class="city" style="display:none">
+<div style="margin: 0 11%;">
+<H2>CCS</H2>
+<p>How to progress CCS requests</p>
+
+<ul>
+<li>Create CCR account </li>
+<ul>
+<li>.Net Team</li>
+</ul>
+<li>CCS input </li>
+<ul>
+<li>Ruth Sheridan</li>
+</ul>
+<li>CCR Issues</li>
+<ul>
+<li>T24 Ops</li>
+</ul>
+</ul>
+
+<div class="w3-small w3-panel w3-light-grey w3-left-align" style="font-family:courier;">
+<p>e.g.</p>
+<p><strong>Bill Gates</strong></p>
+<p>+44 098765432</p>
+
+<p>Request to add CCR account </p>
+<p>e.g<br>Called user<br>Zomm remote</br>Folder name<br>Error</p>
+<p>Attach a screenshot to the ticket</p>
+</div>
+<h4>Note:</h4>
+<p>Get approval before progressing</p>
+<div class="w3-panel w3-blue w3-card-4 w3-small w3-round-xlarge" >
+<h4>Resolver teams</h4>
+<ul>
+<li>Service Desk</li>
+<li>.Net Team</li>
+<li>T24 Ops</li>
+</ul>
+</div>
+
+</div><hr></div>
+
+<!-- ####################### CCS End ############### -->
+<!-- ####################### Phobues  ############### -->
+
+<div id="Phob" class="city" style="display:none">
+<div style="margin: 0 11%;">
+<H2>Phobues</H2>
+<p>How to progress Phobues requests</p>
+<div class="w3-panel w3-round-xlarge w3-yellow w3-center-align">
+<h3>Phobues Access Requests</h3>
+<p>It is not yet confirmed which resolver team creates Phobues accounts or gives the access.</p>
+</div>
+<p>If user is unable to connect to Phobues and has recently had access previously.
+<ul>
+<li>Kill Citrix via System Tray (if available) </li>
+
+<li>Launch ZScaler</li>
+<ul>
+<li>Choose More..  </li>
+<li>Update App</li>
+<li>Update Policy</li>
+<li>Restart Services</li>
+</ul>
+<li>Ignore any error at first attempt and relaunch Phobues</li>
+<ul>
+<li>If Phobues failes, take screen shots of the errors and add to ticket
+</ul>
+</ul>
+
+<div class="w3-small w3-panel w3-light-grey w3-left-align" style="font-family:courier;">
+<p>e.g.</p>
+<p><strong>Bill Gates</strong></p>
+<p>+44 098765432</p>
+
+<p>Phobues not launching</p>
+<p>e.g<br>Called user<br>Zomm remote<br>Log what process you completed<br>Error</p>
+<p>Attach a screenshot to the ticket</p>
+</div>
+<h4>Note:</h4>
+<p>Logi to http://ip.Zscaler.co.uk via the users desktop and take a screenshot of the page when it loads and add to the ticket</p>
+<div class="w3-panel w3-blue w3-card-4 w3-small w3-round-xlarge" >
+<h4>Resolver teams</h4>
+<ul>
+<li>Service Desk</li>
+<li>Deskside Support</li>
+<li>Infrastructure</li>
+</ul>
+</div>
+
+</div><hr></div>
+<!-- ####################### Phobues End ############### -->
+<!-- ####################### Leads ############### -->
+<div id="Leads" class="city" style="display:none">
+<div style="margin: 0 11%;">
+<h2>Leads</h2>
+<h4>Service Desk</h4>
+<ul>
+<li>Rob Broome</li>
+</ul>
+<h4>Desktop Support</h4>
+<ul>
+<li>Phil Neil</li>
+</ul>
+<h4>T24</h4>
+<ul>
+<li>Peter Meager</li>
+</ul>
+<h4>Infrastructure</h4>
+<ul>
+<li>Ciaran Boyle</li>
+</ul>
+</div>
+<hr>
+</div>
+
+<!-- ####################### Leads End ############### -->
+
+
+<!-- ####################### WINVVPol ############### -->
+<div id="WINVVPol" class="city" style="display:none">
+<div style="margin: 0 11%;">
+<H2>WIN VV <span style="font-size:10pt;color:tomato"><strong>AD Policy and Alias'</strong></span></H2>
+<p><strong>User AD Polices: </strong></p>
+<ul>
+<li>A-WinVVTN34002</li>
+<li>A-WinVVTN3316</li>
+</ul>
+<p><strong>Machine AD Polices: </strong></p>
+<ul>
+<li>A#-NetworkRailWinVVTN3.4</li>
+</ul>
+<p><strong>WIN VV Alias'</strong></p>
+<ul>
+<li>WIN VV</li>
+<li>#SIGNON</li>
+<li>TRUST</li>
+<li>TOPS</li>
+<li>Humingbird?</li>
+</ul>
+ </div>
+</div>
+
+<!-- ####################### WINVVPol End ############### -->
+<!-- ####################### T24 R15 ############### -->
+<div id="T24_R15" class="city" style="display:none">
+<div style="margin: 0 11%;">
+<H2>T24 - R15</H2>
+<div class="w3-panel w3-round-xlarge w3-yellow w3-center-align">
+
+<p>R15 is spread over 4 mandates as below</p>
+<ul>
+<li><a href="http://cfsdglt24web02:8080/BrowserWeb/servlet/BrowserServlet">Oyster - (Link Ireland)</a></li>
+<li><a href="http://cfsdglt24web03:8080/BrowserWeb/servlet/BrowserServlet">Italy - (Link Europe)</a></li>
+<li><a href="http://cfsdglt24web04:8080/BrowserWeb/servlet/BrowserServlet">SFG</a></li>
+<li><a href="http://cfsdglt24web01:8080/BrowserWeb/servlet/BrowserServlet">ACC/Rabo</a></li>
+</ul>
+<p></p>
+</div>
+<div id="middle">
+<div class="login-window T24Text">
+<span id="title" style="align:left;"><b>T24 Sign in</b></span>
+<br>
+<br>
+<font style="color:#004080; font-size: 12px " align="left" face="Arial">Usernames and passwords are case sensitive.</font>
+<br>
+<br>
+<div id="error" sv="false">
+<span class="message"></span></div>
+<table>
+<tbody><tr>
+<td colspan="3"></td></tr>
+<tr>
+<td><span><label for="signOnName"><font style="color:#004080; font-size: 14px ;">Username </font></label></span><input class="input_user" id="signOnName" name="signOnName" tabindex="1" size="30" style="background-color: #C5D6F2;" value=""></td><td rowspan="2" width="25%"></td></tr>
+<tr>
+<td colspan="3"></td></tr>
+<tr>
+<td><span><label for="password"><font style="color:#004080; font-size: 14px"> Password &nbsp;</font></label></span><input class="input_box" type="password" id="password" name="password" tabindex="1" size="30" style="background-color: #C5D6F2;" value=""></td></tr>
+<tr>
+<td colspan="3">
+<br>
+<input class="sign_in" type="submit" value="Sign in" id="sign-in" tabindex="1"></td></tr></tbody></table>
+
+</div></div>
+
+<div class="w3-small w3-panel w3-light-grey w3-left-align" style="font-family:courier;">
+<p>e.g.</p>
+<p><strong>Bill Gates</strong></p>
+<p>+44 098765432</p>
+
+<p>Description of the steps you have taken to try to resolve the issue</p>
+<p>e.g<br>Called user<br>Zomm remote</br>Folder name<br>Error</p>
+<p>Attach a screenshot to the ticket</p>
+</div>
+<h4>Note:</h4>
+<p></p>
+<div class="w3-panel w3-blue w3-card-4 w3-small w3-round-xlarge" >
+<h4>Resolver teams</h4>
+<ul>
+<li>Service Desk</li>
+<li>... Support</li>
+<li>...</li>
+</ul>
+</div>
+
+</div><hr></div>
+
+<!-- ####################### T24 R15 ############### -->
+
+<!-- ####################### Templates ############### -->
+<div id="Templ8s" class="city" style="display:none">
+<div style="margin: 0 11%;">
+
+<br>
+<p> - External Authenticator App - </p>
+<textarea rows="8" cols="75" id="myInput(1)">
+Hello ,
+
+Please follow the link below to update your expired password (password expire after 6 months)
+https://passwordreset.microsoftonline.com/
+Username:  @networkrail.co.uk
+Choose Forgotten password. 
+Send a verification text request to your mobile device.â If you require your phone number changing, please contact NR IT Helpdesk direct (01270 721 600)
+Please ensure that the new password you are setting meets the minimum requirements:
+ &#9679 Contains at least 12 characters.
+ &#9679 Contains at least 1 number.
+ &#9679 Contains at least 1 upper-case letter.
+ &#9679 Does not contain any repeated letters e.g. aa
+ &#9679 Does not contain numbers in sequence e.g. 123 or 678.
+ &#9679 Does not contain easily guessable words e.g. Password.
+ &#9679 Does not contain parts of an old password that you have used.
+
+If you require any further assistance, please contact NR IT Helpdesk direct (01270 721 600) or reply to this email with your update, including information regarding the issues you are facing.
+
+We hope that the information provided is useful,
+
+FullName
+Network Rail
+ITHD Analyst
+
+</textarea>
+<div class="copytooltip">
+<button onclick="myFunction(1)" onmouseout="outFunc(1)">
+  <span class="copytooltiptext" id="myCopyTooltip(1)">Copy to clipboard</span>
+-
+  </button>
+</div>
+
+<br>
+<p> - External Authenticator Text - </p>
+<textarea rows="8" cols="75" id="myInput(2)">
+Hello ,
+
+Please follow the link below to update your expired password (password expire after 6 months)
+https://passwordreset.microsoftonline.com/
+Username:  @networkrail.co.uk
+Choose Forgotten password. 
+Enter your mobile phone number ending in (********), to receive your text.â If you require your phone number changing, please contact NR IT Helpdesk direct (01270 721 600)
+Enter your text to verify your account.
+Update/reset your password.
+Please ensure that the new password you are setting meets the minimum requirements:
+ &#9679 Contains at least 12 characters.
+ &#9679 Contains at least 1 number.
+ &#9679 Contains at least 1 upper-case letter.
+ &#9679 Does not contain any repeated letters e.g. aa
+ &#9679 Does not contain numbers in sequence e.g. 123 or 678.
+ &#9679 Does not contain easily guessable words e.g. Password.
+ &#9679 Does not contain parts of an old password that you have used.
+
+If you require any further assistance, please contact NR IT Helpdesk direct (01270 721 600) or reply to this email with your update, including information regarding the issues you are facing.
+
+We hope that the information provided is useful,
+
+FullName
+Network Rail
+ITHD Analyst
+</textarea>
+<div class="copytooltip">
+<button onclick="myFunction(2)" onmouseout="outFunc(2)">
+  <span class="copytooltiptext" id="myCopyTooltip(2)">Copy to clipboard</span>
+-
+  </button>
+</div>
+
+<br>
+<p> - Mailbox Sign Off - </p>
+<textarea rows="3" cols="75" id="myInput(3)">
+We hope that the information provided is useful, if you require further assistance, please contact NR IT Helpdesk direct (01270 721 600)
+
+Kind regards,
+Network Rail
+IT Helpdesk
+01270 721 600
+</textarea>
+<div class="copytooltip">
+<button onclick="myFunction(3)" onmouseout="outFunc(3)">
+  <span class="copytooltiptext" id="myCopyTooltip(3)">Copy to clipboard</span>
+-
+  </button>
+</div>
+
+<br>
+<p> - MFA External Contact Sponsor - </p>
+<textarea rows="9" cols="75" id="myInput(4)">
+Hello #######,
+Please contact your NR sponsor or Jonathan.CURTIS@networkrail.co.uk to email approvals@networkrail.co.uk on your behalf
+Include the in the Subject, this Ref Number: NRINC05######
+Include in the body of the email:
+Username: #username#
+Email address: ####@####.#
+Telephone number: 07########
+Authentification Method used: Text
+Problem: Required to authenticate access to Standards 
+Also unable to complete the Office365 SSPR  (https://passwordreset.microsoftonline.com/)
+Username: #username#@networkrail.co.uk
+After an email is received from your sponsor or Jonathan.CURTIS@networkrail.co.uk to approvals@networkrail.co.uk, short after, you will receive a text to confirm that your phone is configured to verify your NR User account
+We hope that the information provided is useful,
+Chris Jones
+ITHD Analyst
+</textarea>
+<div class="copytooltip">
+<button onclick="myFunction(4)" onmouseout="outFunc(4)">
+  <span class="copytooltiptext" id="myCopyTooltip(4)">Copy to clipboard</span>
+-
+  </button>
+</div>
+
+<br>
+<p> - Update MFA from text to App - </p>
+<textarea rows="4" cols="75" id="myInput(5)">
+
+The process for updating your MFA Authenticator App is to completed on your laptop or PC.
+Please use the link My Sign-Ins(https://mysignins.microsoft.com/security-info), choose the option to Add Sign in Method and choose Microsoft Authenticator and follow the onscreen instructions 
+
+During the process you will be required to download the Authenticator app on your mobile device. You can find the app on: 
+iPhone - App Store 
+Android - https://play.google.com/store/apps/details?id=com.azure.authenticator&pcampaignid=web_share
+Please ignore any requests to sign into the app when it downloads. Only choose the + symbol to add an account. Choose Work or School account and and Scan a QR code when instructed via the on screen instructions on your computer.
+
+Kind regards,
+Network Rail
+IT Helpdesk 
+01270 721 600
+
+</textarea>
+<div class="copytooltip">
+<button onclick="myFunction(5)" onmouseout="outFunc(5)">
+  <span class="copytooltiptext" id="myCopyTooltip(5)">Copy to clipboard</span>
+-
+  </button>
+</div>
+
+<br>
+<p> - eBusiness Request chase-ups - </p>
+<textarea rows="7" cols="75" id="myInput(6)">
+Hello ####,
+
+Thank you for your email. However, IT Helpdesk has no influence on tickets raised with Oracle eBusiness. You can request an update from the resolver team via the Self Service portal(https://nwrprod.service-now.com/sp?id=my_requests) by clicking on the request and adding a comment in the text area available.
+
+You can also log a request for an update via the Oracle E-Business Suite Problem Support Form - Employee Center (https://nwrprod.service-now.com/sp?id=sc_cat_item&sys_id=ffaeeccb1b44c9506d8ceb92b24bcbeb&table=sc_cat_item&searchTerm=oracle%20problem)
+
+We hope that the information provided is useful, if you require further assistance, please contact NR IT Helpdesk direct (01270 721 600)
+
+Kind regards,
+Network Rail
+IT Helpdesk
+01270 721 600
+
+</textarea>
+<div class="copytooltip">
+<button onclick="myFunction(6)" onmouseout="outFunc(6)">
+  <span class="copytooltiptext" id="myCopyTooltip(6)">Copy to clipboard</span>
+-
+  </button>
+</div>
+
+<br>
+<p> - Identify Windows - </p>
+#####################################
+
+<br>
+<p> - Add password protection for Zip7 - </p>
+<textarea rows="7" cols="75" id="myInput(8)">
+######################################
+</textarea>
+<div class="copytooltip">
+<button onclick="myFunction(8)" onmouseout="outFunc(8)">
+  <span class="copytooltiptext" id="myCopyTooltip(8)">Copy to clipboard</span>
+-
+  </button>
+</div>
+
+<br>
+<p> - Decive ID - </p>
+<textarea rows="7" cols="75" id="myInput(9)">
+######################################
+</textarea>
+<div class="copytooltip">
+<button onclick="myFunction(9)" onmouseout="outFunc(9)">
+  <span class="copytooltiptext" id="myCopyTooltip(9)">Copy to clipboard</span>
+-
+  </button>
+</div>
+
+
+<br>
+<p> - Online Outlook Shared Mailbox - </p>
+<textarea rows="7" cols="75" id="myInput(10)">
+######################################
+</textarea>
+<div class="copytooltip">
+<button onclick="myFunction(10)" onmouseout="outFunc(10)">
+  <span class="copytooltiptext" id="myCopyTooltip(10)">Copy to clipboard</span>
+-
+  </button>
+</div>
+
+
+<p> - enable Outlook attachments  - </p>
+<textarea rows="7" cols="75" id="myInput(11)">
+######################################
+</textarea>
+<div class="copytooltip">
+<button onclick="myFunction(11)" onmouseout="outFunc(11)">
+  <span class="copytooltiptext" id="myCopyTooltip(10)">Copy to clipboard</span>
+-
+  </button>
+</div>
+
+
+<p> - Purchasing  - </p>
+<textarea rows="7" cols="75" id="myInput(12)">
+###################################### 
+</textarea>
+
+
+
+
+</div><hr></div>
+
+<!-- ####################### Template End ############### -->
+
+<!-- ####################### AD  ############### -->
+<div id="AD_Leavers" class="city" style="display:none">
+<div style="margin: 0 11%;">
+<H2>Leavers AD</H2>
+<h3>Remove AD Access</h3>
+<p>Completing a leavers request</p>
+<p>Search the user via AD by right clicking the domain and choosing find
+<ul>
+<li>Disable AD account</li>
+<ul>
+<li>right-click the user and choose Disable</li>
+</ul>
+<li>Password reset</li>
+<ul>
+<li>right-click the user and choose Password reset</li>
+</ul>
+</ul>
+
+<h3>Remove AD Group Policies(GP)</h3>
+<ul>
+<li>Right-click the user and choose <strong>Properties</strong></li>
+<li>Select the <strong>Member Of</strong> tab from the properties dialogue box.</li>
+</ul>
+<p>Take a snap-shot of all of the current GP access groups using the <strong>Snipping Tool</strong> and us the scroll to Page-up to capture all group polices and paste each image into the ticket</p>
+<p>After you have made a copy of all the Group Policie and checked, choose the Remove button to delete all access, with the acception of Domain User.</p>
+
+<h3>Remove Managers Details(GP)</h3>
+<p>Choose the <strong>Organization</strong> tab, and choose the <strong>Clear</strong> button to remove all the entries in the input boxes.</p>
+<p>Click <strong>Apply</strong></p>
+<p>Close the AD User Profile dialogue box.</p>
+
+<h3>Archive user AD account</h3>
+<p>From the AD, Domian, user search;</p>
+<ul>
+<li>Archive user</li>
+<ul>
+<li>right-click the user, choose move and choose Terminated Accounts</li>
+</ul>
+</ul>
+ 
+
+<h3>Removing access to Microsoft Office applications, E5 licence.</h3>
+<p>Create a Sub-Request via Marval to <strong>Leaver Request - Recover E5 License</strong><br>
+<p>The sub request will automoatically configure the input boxes</p>
+<p><strong>Change: </strong>Update the <strong>Descrition</strong> by adding the name of the leaver and their email address at the end of, <strong>Leaver Request - Recover E5 Licence </strong></p>
+<p><i>e.g. Leaver Request - Recover E5 Licence - Bill Gates - bill.gates@bcmglobal.com</i></p>
+<p><strong>Copy:</strong> Make a copy of the Description adn paste into the <strong>Sub-Request Notes</strong>.</p>
+
+<h3>Retrieving Hardware request.</h3>
+<p>Create a Sub-Request via Marval to <strong>Leaver Request - Query/Retrieve Hardware</strong><br>
+<p>The sub request will automoatically configure the input boxes</p>
+<p><strong>Change: </strong>Update the <strong>Description</strong> by adding the name of the leaver at the end of, <strong>Leaver Request - Query/Retrieve Hardware </strong></p>
+<p><i>e.g. Leaver Request - Query/Retrieve Hardware - Bill Gates</i></p>
+
+<h3>Remove Managers Details(GP)</h3>
+
+
+
+<div class="w3-small w3-panel w3-light-grey w3-left-align" style="font-family:courier;">
+<p>e.g.</p>
+<p>End Date : 25/12/2032<br>
+First Name : Bill<br>
+Last Name : Gates<br>
+Employee ID (Enter Contracting Company name if contractor) : 54321<br>
+Line Manager : Alan Turing<br>
+Desk Location : 2 Grand Canal Square<br>
+Office Location : Dublin<br>
+Company : BCM Global<br>
+Department : Banking & Credit Management<br>
+Team : Cerberus - Aran & Finn<br>
+Terminate Windows Account<br>
+Remove desk phone number<br>
+Disable email and remove from global address list<br>
+CCMS<br>
+PEGA<br>
+T24<br>
+Please list if application is not listed :<br>
+Provide Contact Person for Asset Retrieval (add line manager if no specific person indicated) : Andrew Geraghty<br>
+Does the leaver have a desk phone? : Yes<br>
+Does the leaver have a mobile device and/or tablet? : Yes<br>
+Does the leaver have a laptop? : Yes<br>
+Does the leaver have a desktop? : Yes<br>
+Does the leaver have company Desktop / Monitors at home? : Yes<br>
+Does the leaver have a remote access token? : Yes</p><br>
+</div>
+<h4>Note:</h4>
+<p></p>
+<div class="w3-panel w3-blue w3-card-4 w3-small w3-round-xlarge" >
+<h4>Resolver teams</h4>
+<ul>
+<li>Service Desk</li>
+<li>... Support</li>
+<li>...</li>
+</ul>
+</div>
+
+</div><hr></div>
+
+<!-- ####################### AD End ############### -->
+<!-- ####################### NetScaler Desktop ############### -->
+<div id="Cit_desktopapp" class="city" style="display:none">
+<div style="margin: 0 11%;">
+<H2>NetScaler Desktop App</H2>
+<p> Issues with access VPN via NetScaler Desktop App</p>
+
+<table class="w3-table w3-striped w3-border">
+<tr><th class="w3-grey">Service name</th><th class="w3-grey">Current URL</th><th class="w3-grey">New URL from Monday 26 April</th></tr>
+<tr><td>Citrix Access Gateway (RSA) </td><td>https://cag.capitaifs.com/</td><td>https://cag.bcmglobal.com/</td></tr>
+<tr><td>Citrix Access Gateway (OKTA) </td><td>https://bcmremote.lgassetservices.ie</td><td>https://bcmremote.bcmglobal.com </td></tr>
+<tr><td>Netscaler VPN Client</td><td>https://bcmvpn.lgassetservices.ie</td><td>https://bcmvpn.bcmglobal.com </td></tr>
+<tr><td>Netscaler VPN Client (Test Environment)</td><td>https://bcmvpntest.lgassetservices.ie </td><td>https://bcmvpntest.bcmglobal.com </td></tr>
+</table>
+
+<h3>If the NetScaler App doesn't load</h3> 
+<p>Check the Citrix version type</p>
+<ul><li>If version 11.1.64 [correct]</li><li>If version 11.1.65[incorrect]</li></ul><li>Reinstall version 11.1.64 (agee64.exe)to roll back</li><li>Version 11.1.64 can be found at L:\IT Support\Applications\NetScaler VPN\agee64.exe</li></ul><li><strong>Requires Restart</strong></li></ul>
+<p>Copy the NetScaler.zip from Kiteworks or contact your senior to send you a copy</p>
+<ul><li>OPne the zip file and copy the contects on to the users desktop</li>
+<ul><li>if you are unable to copy the content to the desktop, open notepad and make a copy of the contents, saving as:</li><ul><li>epaHelper.txt</li><li>epaHelper_epa_plugin.txt</li></ul><li>If AGEE folder already contains the folder, epaPackage and epaPackage.exe, only update the .txt files</li>
+<li>replace the username in teh file with the users name</li>
+</ul><li>Path C:\Users\<strong>username</strong>\AppData\Local\Citrix\AGEE\epaPackage\
+</li>
+</ul>
+<li>attempt to open NetScaler</li>
+</ul>
+</ul>
+
+<div class="w3-small w3-panel w3-light-grey w3-left-align" style="font-family:courier;">
+<p>e.g.</p>
+<p><strong>Bill Gates</strong></p>
+<p>+44 098765432</p>
+
+<p>Description of the steps you have taken to try to resolve the issue</p>
+<p>e.g<br>Called user<br>Zomm remote</br>Folder name<br>Error</p>
+<p>Attach a screenshot to the ticket</p>
+</div>
+<h4>Note:</h4>
+<p></p>
+<div class="w3-panel w3-blue w3-card-4 w3-small w3-round-xlarge" >
+<h4>Resolver teams</h4>
+<ul>
+<li>Service Desk</li>
+<li>... Support</li>
+<li>...</li>
+</ul>
+</div>
+
+</div><hr></div>
+
+<!-- ####################### NetScaler Desktop End ############### -->
+<!-- ####################### NetScaler Desktop ############### -->
+<div id="Cit_DPI" class="city" style="display:none">
+<div style="margin: 0 11%;">
+<H2>Flashing Screens When Using Extended Desktop</H2>
+<p>When extended monitors are plugged into laptop, citrix desktop flashes and unusable</p>
+
+<ul>
+<li>Local Desktop</li>
+<li>Right-click Citrix icon in system tray</li>
+<ul>
